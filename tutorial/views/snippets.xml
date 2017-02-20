@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="snippet_testimonial" name="Testimonial snippet">
+		  <section class="snippet_testimonial">
+		    <div class="container text-center">
+		      <div class="row">
+		        <div class="col-md-4">
+		          <img alt="client" class="img-circle" src="/tutorial/static/img/client1.jpg"/>
+		          <h3>Client Name</h3>
+		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		        </div>
+		        <div class="col-md-4">
+		          <img alt="client" class="img-circle" src="/tutorial/static/img/client4.jpg"/>
+		          <h3>Client Name</h3>
+		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		        </div>
+		        <div class="col-md-4">
+		          <img alt="client" class="img-circle" src="/tutorial/static/img/client3.jpg"/>
+		          <h3>Client Name</h3>
+		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		        </div>
+		      </div>
+		    </div>
+		  </section>
+		</template>
+
+		<template id="place_into_bar" inherit_id="website.snippets" name="Place into bar">
+		  <xpath expr="//div[@id='snippet_content']/div[@class='o_panel_body']" position="inside">
+		    <t t-snippet="tutorial.snippet_testimonial"
+		       t-thumbnail="/tutorial/static/src/img/snippet_thumb.jpg"/>
+		  </xpath>
+		</template>
+	</data>
+</openerp>
