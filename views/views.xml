@@ -15,12 +15,14 @@
           <field  name="name" position="attributes">
               <attribute  name="string">1</attribute>
           </field>
+
+          
       </field>
     </record>
 
 
     <record id="view_tree_todo_task_inherited" model="ir.ui.view">
-      <field name="name"> To - Task Tree Extended</field>
+      <field name="name"> To - Task Tree Extension</field>
       <field name="model">todo.two</field>
       <field name="inherit_id" ref="todo.view_tree_todo_task" />
       <field name="arch" type="xml">
@@ -29,6 +31,22 @@
         </field>
       </field>
     </record>
+
+    <record id="view_filter_todo_task_inherited" model="ir.ui.view">
+      <field name="name">Todo Task Search Extension</field>
+      <field name="model">todo.two</field>
+      <field name="inherit_id" ref="todo.view_search_todo_task"/>
+      <field name="arch" type="xml">
+        <field name="name" position="after">
+          <field name="user_id" />
+          <filter name="filter_my_tasks" string="My Tasks" 
+            domain="[('user_id','in',[uid, False])]" />
+          <filter name="filter_not_assigned" string="Not Assigned" domain="[('user_id','=',False)]" />
+        </field>
+      </field>
+    </record>
+
+
 
   </data>
 </openerp>
